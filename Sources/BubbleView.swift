@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-public enum BubbleArrowEdge { case none, top, bottom, leading, trailing }
+public enum BubbleArrowEdge: Sendable { case none, top, bottom, leading, trailing }
 
 public struct BubbleView<Content: View>: View {
     let arrowEdge: BubbleArrowEdge
@@ -18,7 +18,7 @@ public struct BubbleView<Content: View>: View {
     let content: Content
     let edgeInsets: EdgeInsets
 
-    init(
+    public init(
         arrowEdge: BubbleArrowEdge = .none, arrowSize: CGFloat = 12, arrowPosition: CGFloat = 0.5, margin: CGFloat = 16,
         @ViewBuilder content: () -> Content
     ) {
@@ -40,20 +40,27 @@ public struct BubbleView<Content: View>: View {
         }
     }
 
-    var body: some View {
+    public var body: some View {
         content.padding(edgeInsets).background(
             BubbleShape(arrowEdge: arrowEdge, arrowSize: arrowSize, arrowPosition: arrowPosition, cornerRadius: 12)
                 .fill(Color.white).shadow(radius: 4))
     }
 }
 
-struct BubbleShape: Shape {
-    var arrowEdge: BubbleArrowEdge
-    var arrowSize: CGFloat
-    var arrowPosition: CGFloat // 0 to 1
-    var cornerRadius: CGFloat
+public struct BubbleShape: Shape {
+    public var arrowEdge: BubbleArrowEdge
+    public var arrowSize: CGFloat
+    public var arrowPosition: CGFloat // 0 to 1
+    public var cornerRadius: CGFloat
 
-    func path(in rect: CGRect) -> Path {
+    public init(arrowEdge: BubbleArrowEdge, arrowSize: CGFloat, arrowPosition: CGFloat, cornerRadius: CGFloat) {
+        self.arrowEdge = arrowEdge
+        self.arrowSize = arrowSize
+        self.arrowPosition = arrowPosition
+        self.cornerRadius = cornerRadius
+    }
+
+    public func path(in rect: CGRect) -> Path {
         var path = Path()
         let r = cornerRadius
         let a = arrowSize
