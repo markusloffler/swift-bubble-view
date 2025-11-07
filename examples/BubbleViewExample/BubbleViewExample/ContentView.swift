@@ -34,7 +34,7 @@ struct ContentView: View {
                         .font(.headline)
                         .foregroundColor(.secondary)
 
-                    VStack(spacing: 20) {
+                    HStack(spacing: 20) {
                         BubbleView(arrowEdge: .top, arrowSize: 12, arrowPosition: 0.2) {
                             Text("Arrow at 20%")
                                 .foregroundColor(.black)
@@ -58,7 +58,7 @@ struct ContentView: View {
                         .font(.headline)
                         .foregroundColor(.secondary)
 
-                    VStack(spacing: 20) {
+                    HStack(spacing: 20) {
                         BubbleView(arrowEdge: .bottom, arrowSize: 12, arrowPosition: 0.3) {
                             Text("Bottom arrow at 30%")
                                 .foregroundColor(.black)

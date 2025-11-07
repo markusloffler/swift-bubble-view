@@ -2,6 +2,8 @@
 
 A lightweight SwiftUI component for creating speech bubble and tooltip-style views with customizable arrow positions.
 
+![BubbleView Examples](screenshot.png)
+
 ## Features
 
 - Pure SwiftUI implementation
