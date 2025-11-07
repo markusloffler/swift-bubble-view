@@ -8,9 +8,9 @@
 
 import SwiftUI
 
-enum BubbleArrowEdge { case none, top, bottom, leading, trailing }
+public enum BubbleArrowEdge { case none, top, bottom, leading, trailing }
 
-struct BubbleView<Content: View>: View {
+public struct BubbleView<Content: View>: View {
     let arrowEdge: BubbleArrowEdge
     let arrowSize: CGFloat
     let arrowPosition: CGFloat // from 0.0 (start) to 1.0 (end)
