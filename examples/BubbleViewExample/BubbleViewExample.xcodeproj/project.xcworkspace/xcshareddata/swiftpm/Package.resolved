@@ -1,0 +1,15 @@
+{
+  "originHash" : "317d82be1c18792e51b55986feb94547b2832b3494add6243261eac032f73e19",
+  "pins" : [
+    {
+      "identity" : "swift-bubble-view",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/markusloffler/swift-bubble-view",
+      "state" : {
+        "branch" : "main",
+        "revision" : "c9283b93edb8afe00e15f72103a4bb0a0c6e4760"
+      }
+    }
+  ],
+  "version" : 3
+}
